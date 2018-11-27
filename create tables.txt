@@ -1,0 +1,5 @@
+PRAGMA foreign_keys = ON;
+create table author (code integer primary key, surname text, name text, secname text, shortname text, shortsecname text);
+create table publ (code integer primary key, name text, shortname text);
+create table book (code integer primary key, name text, img text, year integer, pages integer, publ integer references publ(code) on update cascade on delete set null);
+create table book_author (code integer primary key autoincrement, book integer references book(code) on update cascade on delete cascade, author integer references author(code) on update cascade on delete cascade, unique(book,author));
