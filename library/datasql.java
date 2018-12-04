@@ -46,22 +46,22 @@ public class datasql {
 
         ResultSet data = curs.executeQuery("select code, surname, name, secname, shortname, shortsecname from author"); 
         while(data.next()) {
-            lib.newAuthor(data.getInt(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5));
+            lib.newAuthor(data.getInt(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6));
         }
         
         data = curs.executeQuery("select code, name, shortname from publ"); 
         while(data.next()) {
-            lib.newPubl(data.getInt(0), data.getString(1), data.getString(2));
+            lib.newPubl(data.getInt(1), data.getString(2), data.getString(3));
         }
 
         data = curs.executeQuery("select code, name, img, year, pages, publ from book"); 
         while(data.next()) {
-            lib.newBook(data.getInt(0), data.getString(1), data.getString(2), (publ)lib.findPublByCode(data.getInt(5)), data.getInt(3), data.getInt(4));
+            lib.newBook(data.getInt(1), data.getString(2), data.getString(3), (publ)lib.findPublByCode(data.getInt(6)), data.getInt(4), data.getInt(5));
         }
         
         data = curs.executeQuery("select book, author from book_author"); 
         while(data.next()) {
-            lib.appendBookAuthor(data.getInt(0), (author)lib.findAuthorByCode(data.getInt(1)));
+            lib.appendBookAuthor(data.getInt(1), (author)lib.findAuthorByCode(data.getInt(2)));
         }
         data.close();
         curs.close();
