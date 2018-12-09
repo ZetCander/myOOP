@@ -154,8 +154,6 @@ public class dataxml {
 //            transformer.transform(source, result);
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);
-
-            System.out.println("Документ сохранен!");
              
         } catch (ParserConfigurationException | TransformerConfigurationException ex) {
             Logger.getLogger(CreateXMLFileDOMExample.class.getName()).log(Level.SEVERE, null, ex);
