@@ -116,4 +116,17 @@ public class datasql {
         curs.close();
         conn.close();
     }
+	
+	public void dropTables(String dbase) throws SQLException {
+		Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dbase);
+        Statement curs = conn.createStatement();
+		
+		curs.executeUpdate("DROP TABLE author");
+		curs.executeUpdate("DROP TABLE book_author");
+		curs.executeUpdate("DROP TABLE book");
+		curs.executeUpdate("DROP TABLE publ");
+		
+		curs.close();
+        conn.close();
+	}
 }

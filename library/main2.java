@@ -19,9 +19,19 @@ public class Main2 {
         datasql dat2 = new datasql();
         dat2.read("old.sqlite", lib2);
         dat2.write("new.sqlite", lib2);
+		
+		// datasql dat2 = new datasql();
+		// dat2.dropTables("new.sqlite");
         
+		//library lib3 = new library();
+        //dataxml datXml = new dataxml();
+        //datXml.read("old.xml", lib3);
+		//datasql datSql = new datasql();
+        //datSql.write("new.sqlite", lib3);
+        
+		
         for (String s:lib1.getBibliostrs()) {
-            System.out.println(s);
+			System.out.println(s);
         }
     }
     

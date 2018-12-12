@@ -239,7 +239,7 @@ public class library {
     
     ArrayList<String> getBibliostrs() {
         
-        ArrayList<String> bibs = new ArrayList();
+        ArrayList<String> bibs = new ArrayList<String>();
         
         for (Integer c:this.getBookCodes()) {
             bibs.add(this.getBookBibliostr(c));
